@@ -7,7 +7,9 @@ public class NumGuess{
         Scanner userGuessScanner = new Scanner(System.in);
         Random answerRandom = new Random();
         int answer = (answerRandom.nextInt(100) + 1);
+        //Game Finish conditional
         Boolean done = false;
+        //Attempt counter
         int userAttempt = 1;
         int userGuess;
 
