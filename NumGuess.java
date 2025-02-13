@@ -21,12 +21,18 @@ public class NumGuess{
                 I will tell you if your correct, too low, or too high
                 You get 7 guesses total
                 """);
-        System.out.print("Lets start! Whats your first guess: ");
-        userGuess = userGuessScanner.nextInt();
+        System.out.print("Lets start!");
 
-        while(!done) {
-            if (userGuess == answer) {
-                System.out.println("CORRECT! You won the game on attempt " + userAttempt);
+        while(!done && userAttempt <= 7) {
+            System.out.print("Whats your guess: ");
+            userGuess = userGuessScanner.nextInt(); {
+                if (userGuess == answer) {
+                    System.out.println("CORRECT! You won the game on attempt " + userAttempt);
+                }
+                else if(userGuess > answer) {
+                    System.out.println("You answer is too low!");
+                    userAttempt++;
+                }
             }
         }
     }
