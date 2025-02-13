@@ -1,12 +1,33 @@
-import java.util.Scanner;
 import java.util.Random;
-import javax.naming.event.NamingExceptionEvent;
+import java.util.Scanner;
 
 public class NumGuess{
     public static void main(String [] args){
         //initalizing Scanner + Correct answer
-        Scanner userGuess = new Scanner(System.in);
+        Scanner userGuessScanner = new Scanner(System.in);
         Random answerRandom = new Random();
         int answer = (answerRandom.nextInt(100) + 1);
+        Boolean done = false;
+        int userAttempt = 1;
+        int userGuess;
+
+        //Game Start
+        System.out.println("""
+                Welcome! This is the Number Guessing Game
+                I will pick a number between 1 and 100; your job is to try and guess it!\n
+                How to Play
+                -------------
+                You type a number between 1-100
+                I will tell you if your correct, too low, or too high
+                You get 7 guesses total
+                """);
+        System.out.print("Lets start! Whats your first guess: ");
+        userGuess = userGuessScanner.nextInt();
+
+        while(!done) {
+            if (userGuess == answer) {
+                System.out.println("CORRECT! You won the game on attempt " + userAttempt);
+            }
+        }
     }
 }
