@@ -47,8 +47,6 @@ public class NumGuess{
                     done = true;
                 } 
             }
-        }
-        //You lost; restart
-        System.out.println("Whoops you lost!");
+       }
     }
 }
