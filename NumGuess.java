@@ -23,25 +23,32 @@ public class NumGuess{
                 """);
         System.out.println("Lets start!");
 
+        //Playing the game
         while(!done) {
-            System.out.print("Attempt " + userAttempt + "\n Whats your guess: ");
+            System.out.print("Attempt " + userAttempt + "\nWhats your guess: ");
             userGuess = userGuessScanner.nextInt(); {
-                if (userAttempt > 7) {
-                    done = true;   
-                }
-                else if(userGuess == answer) {
+                //Guess is Correct
+                if(userGuess == answer) {
                     System.out.println("CORRECT! You won the game on attempt " + userAttempt);
                     done = true;
                 }
+                //Guess is too high!
                 else if(userGuess > answer) {
                     System.out.println("You answer is too high!");
                     userAttempt++;
                 }
+                //Guess is too low!
                 else if (userGuess < answer) {
                     System.out.println("You answer is too low!");
                     userAttempt++;
+                }
+                //Max Attempts
+                if (userAttempt > 7) {
+                    done = true;
                 } 
             }
         }
+        //You lost; restart
+        System.out.println("Whoops you lost!");
     }
 }
