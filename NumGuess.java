@@ -31,9 +31,13 @@ public class NumGuess{
                     done = true;
                 }
                 else if(userGuess > answer) {
-                    System.out.println("You answer is too low!");
+                    System.out.println("You answer is too high!");
                     userAttempt++;
                 }
+                else if (userGuess < answer) {
+                    System.out.println("You answer is too low!");
+                    userAttempt++;
+                } 
             }
         }
     }
