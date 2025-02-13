@@ -28,6 +28,7 @@ public class NumGuess{
             userGuess = userGuessScanner.nextInt(); {
                 if (userGuess == answer) {
                     System.out.println("CORRECT! You won the game on attempt " + userAttempt);
+                    done = true;
                 }
                 else if(userGuess > answer) {
                     System.out.println("You answer is too low!");
