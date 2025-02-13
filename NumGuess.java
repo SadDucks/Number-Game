@@ -24,7 +24,7 @@ public class NumGuess{
         System.out.print("Lets start!");
 
         while(!done && userAttempt <= 7) {
-            System.out.print("Whats your guess: ");
+            System.out.print("Attempt " + userAttempt + "\n Whats your guess: ");
             userGuess = userGuessScanner.nextInt(); {
                 if (userGuess == answer) {
                     System.out.println("CORRECT! You won the game on attempt " + userAttempt);
