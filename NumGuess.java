@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class NumGuess{
     public static void main(String [] args){
-        //initalizing Scanner + Correct answer
-        Scanner userGuessScanner = new Scanner(System.in);
+        //Correct answer
         Random answerRandom = new Random();
         int answer = (answerRandom.nextInt(100) + 1);
-        //Game Finish conditional
+        //Game Finish conditional & Attempt counter
         Boolean done = false;
-        //Attempt counter
+        Boolean complete = false;
+        Boolean win = false;
+
         int userAttempt = 1;
         int userGuess;
 
@@ -27,29 +28,84 @@ public class NumGuess{
 
         //Playing the game
         while(!done) {
-            System.out.print("Attempt " + userAttempt + "\nWhats your guess: ");
-            userGuess = userGuessScanner.nextInt(); {
-                //Guess is Correct
-                if(userGuess == answer) {
-                    System.out.println("CORRECT! You won the game on attempt " + userAttempt);
-                    done = true;
+            //Win & Lost conditional
+            Boolean lost = false;
+            //Intialzing scanner
+            Scanner userGuessScanner = new Scanner(System.in);
+            Scanner doneScanner = new Scanner(System.in);
+       
+            while(!complete) {
+                System.out.print("Attempt " + userAttempt + "\nWhats your guess: ");
+                userGuess = userGuessScanner.nextInt(); {
+                    //Guess is Correct
+                    if(userGuess == answer) {
+                        complete = true;
+                        win = true;
+                        userGuessScanner.nextLine();
+                    }
+                    //Guess is too high!
+                    else if(userGuess > answer) {
+                        System.out.println("You answer is too high!");
+                        userAttempt++;
+                    }
+                    //Guess is too low!
+                    else if (userGuess < answer) {
+                        System.out.println("You answer is too low!");
+                        userAttempt++;
+                    }
+                    //Lost
+                    if (userAttempt > 7) {
+                        complete = true;
+                        lost = true;
+                        userGuessScanner.nextLine();
+                    }
                 }
-                //Guess is too high!
-                else if(userGuess > answer) {
-                    System.out.println("You answer is too high!");
-                    userAttempt++;
-                }
-                //Guess is too low!
-                else if (userGuess < answer) {
-                    System.out.println("You answer is too low!");
-                    userAttempt++;
-                }
-                //Max Attempts
-                if (userAttempt > 7) {
-                    done = true;
-                } 
             }
-       }
-       userGuessScanner.close();
+                //End screen lost
+            if (lost == true) {
+                System.out.print("Whoops! You lost the game. Would you like to try again? (Y/N) ");
+                String doneInput; 
+                doneInput = userGuessScanner.nextLine();
+
+                if (doneInput.equals("Y")) {
+                    userAttempt = 1;
+                    userGuess = 0;
+                    complete = false;
+                    lost = false;
+                }
+
+                else if (doneInput.equals("N")) {
+                    System.out.println("Thanks for playing");
+                    done = true;
+                }
+                else {
+                    System.out.println("Thanks for playing");
+                    done = true;
+                }
+            }
+            //End Screen Win
+            if (win == true) {
+                System.out.println("CORRECT! You won the game on attempt " + userAttempt);
+                System.out.print("Would you like to try again? (Y/N) ");
+                String doneInput; 
+                doneInput = userGuessScanner.nextLine();
+
+                if (doneInput.equals("Y")) {
+                    userAttempt = 1;
+                    userGuess = 0;
+                    complete = false;
+                    win = false;
+                }
+
+                else if (doneInput.equals("N")) {
+                    System.out.println("Thanks for playing");
+                    done = true;
+                }
+                else {
+                    System.out.println("Thanks for playing");
+                    done = true;
+                }
+            }
+        }
     }
 }
