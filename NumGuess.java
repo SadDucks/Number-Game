@@ -13,7 +13,11 @@ public class NumGuess{
         //Game required variables
         int userAttempt = 1;
         int userGuess;
+
+        //Game Satistics
         int gameCount = 1;
+        int wins = 0;
+        int losts = 0;
 
         //Game Start
         System.out.println("""
@@ -42,6 +46,7 @@ public class NumGuess{
                     if(userGuess == answer) {
                         complete = true;
                         win = true;
+                        wins++;
                         userGuessScanner.nextLine();
                     }
                     //Guess is too high!
@@ -58,6 +63,7 @@ public class NumGuess{
                     if (userAttempt > 7) {
                         complete = true;
                         lost = true;
+                        losts++;
                         userGuessScanner.nextLine();
                     }
                 }
@@ -73,6 +79,7 @@ public class NumGuess{
                     userGuess = 0;
                     complete = false;
                     lost = false;
+                    answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
                 }
 
@@ -97,20 +104,26 @@ public class NumGuess{
                     userGuess = 0;
                     complete = false;
                     win = false;
+                    answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
                 }
 
                 else if (doneInput.equals("N")) {
-                    System.out.println("Thanks for playing");
+                    System.out.println("\nThanks for playing");
                     done = true;
                     userGuessScanner.close();
                 }
                 else {
-                    System.out.println("Thanks for playing");
+                    System.out.println("\nThanks for playing");
                     done = true;
                     userGuessScanner.close();
                 }
             }
         }
+        //Display Game Statistics
+        System.out.println("\nGame Statistics:\n");
+        System.out.println("Total Games: " + gameCount);
+        System.out.println("Wins: " + wins);
+        System.out.println("Losts: " + losts);
     }
 }
