@@ -10,9 +10,10 @@ public class NumGuess{
         Boolean done = false;
         Boolean complete = false;
         Boolean win = false;
-
+        //Game required variables
         int userAttempt = 1;
         int userGuess;
+        int gameCount = 1;
 
         //Game Start
         System.out.println("""
@@ -29,12 +30,13 @@ public class NumGuess{
         //Playing the game
         while(!done) {
             //Win & Lost conditional
+            System.out.println("Game " + gameCount);
             Boolean lost = false;
             //Intialzing scanner
             Scanner userGuessScanner = new Scanner(System.in);
        
             while(!complete) {
-                System.out.print("Attempt " + userAttempt + "\nWhats your guess: ");
+                System.out.print("Current Attempt Count: " + userAttempt + "\nWhats your guess: ");
                 userGuess = userGuessScanner.nextInt(); {
                     //Guess is Correct
                     if(userGuess == answer) {
@@ -71,6 +73,7 @@ public class NumGuess{
                     userGuess = 0;
                     complete = false;
                     lost = false;
+                    gameCount++;
                 }
 
                 else if (doneInput.equals("N")) {
@@ -94,6 +97,7 @@ public class NumGuess{
                     userGuess = 0;
                     complete = false;
                     win = false;
+                    gameCount++;
                 }
 
                 else if (doneInput.equals("N")) {
