@@ -62,7 +62,7 @@ public class NumGuess{
                     }
                 }
             }
-                //End screen lost
+            //End screen lost
             if (lost == true) {
                 System.out.print("Whoops! You lost the game. Would you like to try again? (Y/N) ");
                 String doneInput; 
