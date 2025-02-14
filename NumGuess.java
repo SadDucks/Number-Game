@@ -32,7 +32,6 @@ public class NumGuess{
             Boolean lost = false;
             //Intialzing scanner
             Scanner userGuessScanner = new Scanner(System.in);
-            Scanner doneScanner = new Scanner(System.in);
        
             while(!complete) {
                 System.out.print("Attempt " + userAttempt + "\nWhats your guess: ");
@@ -100,10 +99,12 @@ public class NumGuess{
                 else if (doneInput.equals("N")) {
                     System.out.println("Thanks for playing");
                     done = true;
+                    userGuessScanner.close();
                 }
                 else {
                     System.out.println("Thanks for playing");
                     done = true;
+                    userGuessScanner.close();
                 }
             }
         }
