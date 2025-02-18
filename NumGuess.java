@@ -88,7 +88,6 @@ public class NumGuess{
 
                 if (doneInput.equals("Y")) {
                     userAttempt = 1;
-                    userGuess = 0;
                     complete = false;
                     answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
