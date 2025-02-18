@@ -119,19 +119,19 @@ public class NumGuess{
                 }
 
                 else if (doneInput.equals("N")) {
-                    System.out.println("\nThanks for playing");
+                    System.out.println("\nThanks for playing!");
                     done = true;
                     userGuessScanner.close();
                 }
                 else {
-                    System.out.println("\nThanks for playing");
+                    System.out.println("\nThanks for playing!");
                     done = true;
                     userGuessScanner.close();
                 }
             }
         }
         //Display Game Statistics
-        System.out.println("\nGame Statistics:\n");
+        System.out.println("Game Statistics:\n");
         System.out.println("Total Games: " + gameCount);
         System.out.println("Wins: " + wins);
         System.out.println("Losts: " + losts);
