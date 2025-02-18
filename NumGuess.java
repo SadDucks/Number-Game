@@ -67,7 +67,7 @@ public class NumGuess{
                         userAttempt++;
                     }
                     //Guess is too low!
-                    else if (userGuess < answer) {
+                    else {
                         System.out.println("You answer is too low!");
                         userAttempt++;
                     }
