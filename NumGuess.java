@@ -1,3 +1,15 @@
+/***************************
+ *                         *
+ * NumGuess.java           *
+ * A Number Guessing Game  *
+ *                         *
+ * By Jacub Truong         *
+ *                         *
+ ***************************/
+
+
+
+
 import java.util.Random;
 import java.util.Scanner;
 
