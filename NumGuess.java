@@ -52,7 +52,7 @@ public class NumGuess{
             Scanner userGuessScanner = new Scanner(System.in);
        
             while(!complete) {
-                System.out.print("Current Attempt Count: " + userAttempt + "\nWhats your guess: ");
+                System.out.print("Current Attempt Count: " + userAttempt + "\nWhat\'s your guess: ");
                 userGuess = userGuessScanner.nextInt(); {
                     //Guess is Correct
                     if(userGuess == answer) {
@@ -90,7 +90,6 @@ public class NumGuess{
                     userAttempt = 1;
                     userGuess = 0;
                     complete = false;
-                    lost = false;
                     answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
                 }
@@ -113,7 +112,6 @@ public class NumGuess{
 
                 if (doneInput.equals("Y")) {
                     userAttempt = 1;
-                    userGuess = 0;
                     complete = false;
                     win = false;
                     answer = (answerRandom.nextInt(100) + 1);
