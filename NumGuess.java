@@ -12,13 +12,14 @@ import java.util.Scanner;
 
 public class NumGuess{
     public static void main(String [] args){
-        //Correct answer
+        //Intializing the Randomizer
         Random answerRandom = new Random();
-        int answer = (answerRandom.nextInt(100) + 1);
+
         //Game Finish conditional & Attempt counter
         Boolean done = false;
         Boolean complete = false;
         Boolean win = false;
+
         //Game required variables
         int userAttempt = 1;
         int userGuess;
@@ -45,8 +46,9 @@ public class NumGuess{
             //Win & Lost conditional
             System.out.println("Game " + gameCount);
             Boolean lost = false;
-            //Intialzing scanner
+            //Intialzing scanner & obtaining answer
             Scanner userGuessScanner = new Scanner(System.in);
+            int answer = (answerRandom.nextInt(100) + 1);
        
             while(!complete) {
                 System.out.print("Current Attempt Count: " + userAttempt + "\nWhat\'s your guess: ");
@@ -86,7 +88,6 @@ public class NumGuess{
                 if (doneInput.equals("Y")) {
                     userAttempt = 1;
                     complete = false;
-                    answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
                 }
 
@@ -110,7 +111,6 @@ public class NumGuess{
                     userAttempt = 1;
                     complete = false;
                     win = false;
-                    answer = (answerRandom.nextInt(100) + 1);
                     gameCount++;
                 }
 
@@ -126,6 +126,7 @@ public class NumGuess{
                 }
             }
         }
+        
         //Display Game Statistics
         System.out.println("Game Statistics:\n");
         System.out.println("Total Games: " + gameCount);
