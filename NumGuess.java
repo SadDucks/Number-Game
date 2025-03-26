@@ -45,7 +45,7 @@
     }
 
     public static boolean playAgain(boolean done, String answer) {
-        System.out.print("Would you like to play again? (Y/N)");
+        System.out.print("Would you like to play again? (Y/N) ");
         Scanner userGuessScanner = new Scanner(System.in);
 
         answer = userGuessScanner.nextLine();
@@ -70,7 +70,6 @@
          //Game Finish conditional & Attempt counter
          Boolean done = false;
          Boolean complete = false;
-         Boolean win = false;
  
          //Game required variables
          int userAttempt = 1;
@@ -92,7 +91,6 @@
              System.out.println("Game " + gameCount);
 
              //Intialzing scanner & obtaining answer
-             Scanner userGuessScanner = new Scanner(System.in);
              int answer = getAnswer(0);
         
              while(!complete) {
@@ -101,7 +99,6 @@
                      //Guess is Correct
                      if(gameComplete(true, userGuess, answer, userAttempt)) {
                          complete = true;
-                         win = true;
                          wins++;
                      }
                      //Guess is too high!
