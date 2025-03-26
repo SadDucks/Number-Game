@@ -87,10 +87,7 @@
  
          //Playing the game
          while(!done) {
-             //Win & Lost conditional
              System.out.println("Game " + gameCount);
-
-             //Intialzing scanner & obtaining answer
              int answer = getAnswer(0);
         
              while(!complete) {
@@ -101,7 +98,7 @@
                          complete = true;
                          wins++;
                      }
-                     //Guess is too high!
+                     //Calculating whether the guess is too high or too low
                      else {
                          highOrLow(userGuess, answer);
                          userAttempt++;
